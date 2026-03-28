@@ -48,12 +48,38 @@
         <a href="calendar.html" class="hover:text-amber transition">Schedule</a>
         <a href="#contact" class="hover:text-amber transition">Contact</a>
       </div>
-      <a href="#contact" class="sm:hidden text-sm font-semibold text-amber">Get in Touch</a>
+      <button id="menuToggle" onclick="toggleMenu()" class="sm:hidden text-warmchar" aria-label="Menu">
+        <svg id="menuOpen" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg id="menuClose" class="w-6 h-6 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="hidden sm:hidden border-t border-amberlight bg-cream px-6 pb-4">
+      <div class="flex flex-col gap-3 pt-3 text-base font-medium text-warmgray">
+        <a href="#about" onclick="closeMenu()" class="hover:text-amber transition py-1">About</a>
+        <a href="#training" onclick="closeMenu()" class="hover:text-amber transition py-1">Training</a>
+        <a href="#pricing" onclick="closeMenu()" class="hover:text-amber transition py-1">Pricing</a>
+        <a href="#faq" onclick="closeMenu()" class="hover:text-amber transition py-1">FAQ</a>
+        <a href="calendar.html" class="hover:text-amber transition py-1">Schedule</a>
+        <a href="#contact" onclick="closeMenu()" class="hover:text-amber transition py-1">Contact</a>
+      </div>
     </div>
   </nav>
 
+  <script>
+    function toggleMenu() {
+      document.getElementById('mobileMenu').classList.toggle('hidden');
+      document.getElementById('menuOpen').classList.toggle('hidden');
+      document.getElementById('menuClose').classList.toggle('hidden');
+    }
+    function closeMenu() {
+      document.getElementById('mobileMenu').classList.add('hidden');
+      document.getElementById('menuOpen').classList.remove('hidden');
+      document.getElementById('menuClose').classList.add('hidden');
+    }
+  </script>
+
   <!-- Hero -->
-  <section class="pt-32 pb-20 px-6">
+  <section class="pt-24 sm:pt-32 pb-10 sm:pb-20 px-6">
     <div class="max-w-3xl mx-auto text-center">
       <h1 class="font-serif text-5xl sm:text-6xl md:text-7xl text-warmchar leading-tight">
         Boxing Basics
@@ -74,7 +100,7 @@
   </section>
 
   <!-- About -->
-  <section id="about" class="py-20 px-6 bg-softbg">
+  <section id="about" class="py-10 sm:py-20 px-6 bg-softbg">
     <div class="max-w-3xl mx-auto">
       <h2 class="font-serif text-3xl sm:text-4xl mb-8">About Your Coach — PK</h2>
       <div class="space-y-5 text-lg text-warmgray leading-relaxed">
@@ -92,15 +118,15 @@
       <!-- Photo Gallery -->
       <div class="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4">
         <div class="overflow-hidden rounded-2xl">
-          <img src="images/dominican-republic.png" alt="Training in the Dominican Republic" class="w-full h-64 object-cover hover:scale-105 transition duration-300">
+          <img src="images/dominican-republic.png" alt="Training in the Dominican Republic" class="w-full h-64 object-cover object-top hover:scale-105 transition duration-300">
           <p class="text-sm text-warmgray mt-2 text-center">Dominican Republic</p>
         </div>
         <div class="overflow-hidden rounded-2xl">
-          <img src="images/japan.png" alt="Training in Japan" class="w-full h-64 object-cover hover:scale-105 transition duration-300">
+          <img src="images/japan.png" alt="Training in Japan" class="w-full h-64 object-cover object-top hover:scale-105 transition duration-300">
           <p class="text-sm text-warmgray mt-2 text-center">Japan</p>
         </div>
         <div class="overflow-hidden rounded-2xl">
-          <img src="images/cuba.png" alt="Training in Cuba" class="w-full h-64 object-cover hover:scale-105 transition duration-300">
+          <img src="images/cuba.png" alt="Training in Cuba" class="w-full h-64 object-cover object-top hover:scale-105 transition duration-300">
           <p class="text-sm text-warmgray mt-2 text-center">Cuba</p>
         </div>
       </div>
@@ -131,7 +157,7 @@
   </section>
 
   <!-- What You Get -->
-  <section id="training" class="py-20 px-6">
+  <section id="training" class="py-10 sm:py-20 px-6">
     <div class="max-w-3xl mx-auto">
       <h2 class="font-serif text-3xl sm:text-4xl mb-8">What You Get</h2>
       <div class="grid sm:grid-cols-2 gap-6">
@@ -163,10 +189,10 @@
   </section>
 
   <!-- Pricing -->
-  <section id="pricing" class="py-20 px-6 bg-softbg">
+  <section id="pricing" class="py-10 sm:py-20 px-6 bg-softbg">
     <div class="max-w-3xl mx-auto">
       <h2 class="font-serif text-3xl sm:text-4xl mb-4">Pricing</h2>
-      <p class="text-warmgray text-lg mb-10">Simple, transparent pricing. No lock-in contracts.</p>
+      <p class="text-warmgray text-lg mb-6 sm:mb-10">Simple, transparent pricing. No lock-in contracts.</p>
 
       <!-- First Lesson -->
       <div class="bg-amber/10 border-2 border-amber rounded-2xl p-6 mb-6 text-center">
@@ -236,9 +262,9 @@
   </section>
 
   <!-- FAQ -->
-  <section id="faq" class="py-20 px-6">
+  <section id="faq" class="py-10 sm:py-20 px-6">
     <div class="max-w-3xl mx-auto">
-      <h2 class="font-serif text-3xl sm:text-4xl mb-10">Frequently Asked Questions</h2>
+      <h2 class="font-serif text-3xl sm:text-4xl mb-6 sm:mb-10">Frequently Asked Questions</h2>
       <div class="space-y-6">
         <div class="bg-softbg rounded-2xl p-6">
           <h3 class="font-semibold text-lg mb-2">Do I need boxing experience?</h3>
@@ -265,7 +291,7 @@
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="py-20 px-6 bg-softbg">
+  <section id="contact" class="py-10 sm:py-20 px-6 bg-softbg">
     <div class="max-w-xl mx-auto text-center">
       <h2 class="font-serif text-3xl sm:text-4xl mb-6">Get in Touch</h2>
       <p class="text-lg text-warmgray mb-8">
